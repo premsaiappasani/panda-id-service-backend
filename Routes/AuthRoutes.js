@@ -11,14 +11,14 @@ import {
 
 const router = express.Router();
 
-router.route('/register').post(signUp);
+router.route('/register').post(publicAuth, signUp);
 
 router.route('/getUser').get(userAuth, getUser);
 
-router.route('/signIn').post(signIn);
+router.route('/signIn').post(publicAuth, signIn);
 
 router.route('/passwords/forgot').put(publicAuth, forgotPassword);
 
-router.route('/passwords/reset').put(userAuth, resetPassword);
+router.route('/passwords/reset').put(publicAuth, resetPassword);
 
 export default router

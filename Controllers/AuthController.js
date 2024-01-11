@@ -31,7 +31,6 @@ export const getUser = async (req, res) => {
 };
 
 export const signUp = (async (req, res) => {
-
     try {
         const emailAddress = req.body.email;
         const rawPassword = req.body.password;
@@ -222,7 +221,8 @@ export const forgotPassword = async (req, res) => {
 
         res.status(200).json({
             status: 'Success',
-            resetUrl: queryUrl
+            resetUrl: queryUrl,
+            passPhrase: passPhrase
         });
     } catch (err) {
         console.log(err);
